@@ -1,0 +1,27 @@
+- OpenSSL error fix.
+
+Add this into \node_modules\react-scripts\config\webpack.config.js
+
+// openssl fix
+const crypto = require("crypto");
+const crypto_orig_createHash = crypto.createHash;
+crypto.createHash = algorithm => crypto_orig_createHash(algorithm == "md4" ? "sha256" : algorithm);
+
+resolve: {
+      // This allows you to set a fallback for where webpack should look for modules.
+      // We placed these paths second because we want `node_modules` to "win"
+      // if there are any conflicts. This matches Node resolution mechanism.
+      // https://github.com/facebook/create-react-app/issues/253
+      fallback: {
+       "https": require.resolve("https-browserify"),
+       "path": require.resolve("path-browserify"),
+       "assert": require.resolve("assert/"),
+       "http": require.resolve("stream-http"),
+       "buffer": require.resolve("buffer/"),
+       "url": require.resolve("url/"),
+       "fs": false
+      },
+
+
+- Instead of import  {useState, useEffect } from 'react';
+this one import  React, {useState, useEffect } from 'react';
