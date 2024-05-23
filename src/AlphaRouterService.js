@@ -4,10 +4,11 @@ const { ethers, BigNumber } = require('ethers')
 const JSBI = require('jsbi')
 const ERC20ABI = require('./abi.json')
 
-
 const V3_SWAP_ROUTER_ADDRESS = '0x3bFA4769FB09eefC5a80d6E87c3B9C650f7Ae48E'
 //const V3_SWAP_ROUTER_ADDRESS = '0xE592427A0AEce92De3Edee1F18E0157C05861564'
 const REACT_APP_INFURA_URL_TESTNET = process.env.REACT_APP_INFURA_URL_TESTNET
+const WALLET_ADDRESS = process.env.REACT_APP_WALLET_ADDRESS
+const WALLET_SECRETE = process.env.REACT_APP_WALLET_SECRETE
 
 const chainId = 11155111
 

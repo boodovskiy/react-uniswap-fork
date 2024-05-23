@@ -40,9 +40,13 @@ function App() {
       
       const usdcContract = getUsdcContract()
       setUsdcContract(usdcContract)
+
     }
     onLoad()
   }, [])
+
+   
+  
 
   const getSigner = async provider => {
     provider.send("eth_requestAccounts", []);
